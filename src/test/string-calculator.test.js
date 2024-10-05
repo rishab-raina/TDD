@@ -27,7 +27,7 @@ describe("add - negative numbers", () => {
   let caught = null;
   before(()=>{
     try {
-      calculator.add("-1")
+      calculator.add("-1,-42")
     } catch (ex) {
       caught = ex
       
@@ -35,6 +35,12 @@ describe("add - negative numbers", () => {
   });
   it("negative numbers not allowed", () =>{
     expect(caught).to.not.equal(null)
+  });
+  it("should include the first invalid negative number", () =>{
+    expect(caught.indexOf("-1")).to.not.equal(-1)
+  })
+  it("should include the second invalid negative number", () =>{
+    expect(caught.indexOf("-42")).to.not.equal(-1)
   })
 });
 
