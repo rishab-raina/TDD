@@ -22,12 +22,13 @@ const getNumbers = (expression) => {
 const hasCustomDelimeter = (expression) => /^\/\//.test(expression);
 
 //function to remove the part of expression containing the delimeter pattern
-const stripFirstLine = (expression) => expression.substring(expression.indexOf("\n") + 1);
+const stripFirstLine = (expression) =>
+  expression.substring(expression.indexOf("\n") + 1);
 
 //function to extract custom delimeter from the input expression
 const getCustomDelimeter = (expression) => expression.charAt(2);
 
-//function to split based on delimeter array 
+//function to split based on delimeter array
 const getSubArray = (numbersSofar, delimiters) => {
   if (delimiters.length === 0) return numbersSofar;
   let subArray = [];
@@ -49,12 +50,14 @@ const calclulateSum = (numbers) => {
   return sum;
 };
 
-const checkValidity = numbers => {
-    for (let index = 0; index < numbers.length; index++) {
-        const element = parseInt(numbers[index]);
-        if(element < 0){
-            throw "error!"
-        }
-        
+const checkValidity = (numbers) => {
+  let negatives = [];
+  for (let index = 0; index < numbers.length; index++) {
+    const element = parseInt(numbers[index]);
+    if (element < 0) {
+      negatives.push(element);
     }
-}
+  }
+  if (negatives.length)
+    throw "negative numbers not allowed" + negatives.join(",");
+};
