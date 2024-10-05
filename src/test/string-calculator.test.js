@@ -18,6 +18,11 @@ describe("add - new line separator", () => {
   checkResult("1\n5", 6);
 });
 
+describe("add - different delimiters", () => {
+  checkResult("//;\n1;2", 3);
+});
+
+
 function checkResult(expression, expected) {
   it("should return " + expected + ' when passed "' + expression.replace(/\n/g, "\\n") + '"', () => {
     const actual_result = calculator.add(expression);
