@@ -1,0 +1,23 @@
+{
+  "name": "tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.25.7",
+    "@babel/preset-env": "^7.25.7",
+    "@babel/register": "^7.25.7",
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
