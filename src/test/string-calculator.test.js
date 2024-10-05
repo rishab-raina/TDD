@@ -14,8 +14,12 @@ describe("add - with comma separator", () => {
   checkResult("1,2,3,4,5", 15); //added test to handle any amount of numbers
 });
 
+describe("add - new line separator", () => {
+  checkResult("1\n5", 6);
+});
+
 function checkResult(expression, expected) {
-  it("should return " + expected + ' when passed "' + expression + '"', () => {
+  it("should return " + expected + ' when passed "' + expression.replace(/\n/g, "\\n") + '"', () => {
     const actual_result = calculator.add(expression);
     expect(actual_result).to.equal(expected);
   });
