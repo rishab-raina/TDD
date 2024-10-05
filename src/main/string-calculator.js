@@ -1,8 +1,12 @@
-//string calculator add method with two comma separated numbers as input
+//string calculator add method with n comma separated numbers as input
 
 export const calculator = {
   add: (expression) => {
     let numbers = expression.split(",");
-    return parseInt(numbers[0] || 0) + parseInt(numbers[1] || 0);
+    let sum = 0;
+    for (let index = 0; index < numbers.length; index++) {
+      sum += parseInt(numbers[index] || 0);
+    }
+    return sum;
   },
 };
