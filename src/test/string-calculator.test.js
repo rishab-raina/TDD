@@ -9,6 +9,10 @@ describe("add - basic functionality", () => {
   checkResult("1",1)
 });
 
+describe("add - with comma separator", () => {
+  checkResult("1,5",6);
+});
+
 function checkResult(expression, expected){
   it('should return '+ expected  + ' when passed "'+expression +'"' , () => {
      const actual_result = calculator.add(expression);
