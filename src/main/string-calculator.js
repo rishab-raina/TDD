@@ -3,6 +3,7 @@
 export const calculator = {
   add: (expression) => {
     let numbers = getNumbers(expression);
+    checkValidity(numbers);
     return calclulateSum(numbers);
   },
 };
@@ -47,3 +48,13 @@ const calclulateSum = (numbers) => {
   }
   return sum;
 };
+
+const checkValidity = numbers => {
+    for (let index = 0; index < numbers.length; index++) {
+        const element = parseInt(numbers[index]);
+        if(element < 0){
+            throw "error!"
+        }
+        
+    }
+}
