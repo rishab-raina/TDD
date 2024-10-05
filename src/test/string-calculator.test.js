@@ -1,4 +1,5 @@
 import { expect } from "chai";
+import { add } from "../main/string-calculator.js";
 
 // describe the group of tests we are running
 describe("add - basic functionality", () => {
@@ -7,6 +8,6 @@ describe("add - basic functionality", () => {
   it("returns 0  when passed an empty string", () => {
     const expected = 0;
     const actual = add("");
-    expect(actual).deep.to.equal(expected);
+    expect(actual).to.equal(expected);
   });
 });

@@ -1,2 +1,2 @@
-//TDD first commit - no production code 
-
+//string calculator method for empty string 
+export const add = numbers => 0; 
