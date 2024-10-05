@@ -1,7 +1,8 @@
-//string calculator method basic functionality with one number as input
+//string calculator add method with two comma separated numbers as input
 
 export const calculator = {
-      add: (number) => {
-        return parseInt(number || 0)
-      }
-}
+  add: (expression) => {
+    let numbers = expression.split(",");
+    return parseInt(numbers[0] || 0) + parseInt(numbers[1] || 0);
+  },
+};
