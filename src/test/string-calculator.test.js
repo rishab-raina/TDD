@@ -6,6 +6,7 @@ describe("add - basic functionality", () => {
   // claims or assertions we want to make about our code
   //claims should back up the assertion we made in this functionality written in the string
   checkResult("",0);
+  checkResult("1",1)
 });
 
 function checkResult(expression, expected){
