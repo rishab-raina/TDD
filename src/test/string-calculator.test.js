@@ -23,6 +23,21 @@ describe("add - different custom delimiters for pattern: \"//[delimiter]\\n[numb
   checkResult("//;\n1;2", 3);
 });
 
+describe("add - negative numbers", () => {
+  let caught = null;
+  before(()=>{
+    try {
+      calculator.add("-1")
+    } catch (ex) {
+      caught = ex
+      
+    }
+  });
+  it("negative numbers not allowed", () =>{
+    expect(caught).to.not.equal(null)
+  })
+});
+
 
 function checkResult(expression, expected) {
   it("should return " + expected + ' when passed "' + expression.replace(/\n/g, "\\n") + '"', () => {
