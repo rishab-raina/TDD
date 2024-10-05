@@ -18,7 +18,8 @@ describe("add - new line separator", () => {
   checkResult("1\n5", 6);
 });
 
-describe("add - different delimiters", () => {
+//added test for custom delimeter based on pattern "//[delimiter]\n[numbers…]"
+describe("add - different custom delimiters for pattern: \"//[delimiter]\\n[numbers…]\"", () => {
   checkResult("//;\n1;2", 3);
 });
 
